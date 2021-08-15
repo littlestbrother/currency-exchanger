@@ -1,3 +1,7 @@
-.greeting{
+/* .greeting{
     color:blue;
+} */
+
+input#USD{
+    width: 5%;
 }

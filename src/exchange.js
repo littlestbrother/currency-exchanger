@@ -1,6 +1,6 @@
 export default class Exchange {
 
-    static async getExchangeRate(currency) {
+    static async getExchangeRate(currency, amount) {
         switch (currency) {
             case 'JPY':
             case 'ILS':
@@ -20,10 +20,6 @@ export default class Exchange {
             default:
                 return 'unnacceptable currency!';
         }
-
-    }
-
-    doMath() {
 
     }
 }

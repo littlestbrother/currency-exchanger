@@ -10,18 +10,20 @@ export default class Exchange {
                 try {
                     const response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.KEY}/pair/USD/${currency}`);
                     if (!response.ok) {
-                        throw Error(response.statusText);
+                        return response.status;
                     } else {
-                    return response.json();
+                        return response.json();
                     }
                 } catch (error) {
                     return error;
                 }
             default:
-                // console.error('unacceptable currency!');
-                throw Error('unnacceptable currency!');
-                // return Error
+                return 'unnacceptable currency!';
         }
+
+    }
+
+    doMath() {
 
     }
 }

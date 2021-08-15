@@ -5,21 +5,25 @@ import './css/styles.css';
 import Exchange from './exchange'
 // $(console.log(`${process.env.KEY}`));
 
-async function postResults(response) {
-    if (response && response.result == "success") {
-        console.log(`success! conversion rate = ${response.conversion_rate}`);
+async function noError(currency){
+    let response = await Exchange.getExchangeRate(currency)
+    if(response){
+        console.log(response);
+        return true;
     } else {
-        console.log(`failure! ${response}`)
+        return false;
     }
-    
+}
+
+async function doMath(amount, rate) {
+    return amount * rate;
 }
 
 $(document).ready(function () {
-    // let amount = $('input#amount');
     $("button").click(function () {
         let currency = $("#currency option:selected").val()
-        Exchange.getExchangeRate(currency).then(function (response) {
-            postResults(response)
-        });
+        let amount = $('input#amount').val();
+        console.log(noError(currency));
+        
     });
 });

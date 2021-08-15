@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Currency Exchanger</title>
 </head>
+
 <body>
-    <h1 class="greeting">hello world!</h1>
-    <button>submit</button>
+    <h1 class="display-1">currency exchanger</h1>
+    <input type="number" min="0" id="USD">
+    <label>USD to </label>
+    <select id="currency">
+        <option value="JPY">¥ yen</option>
+        <option value="ILS">₪ shekel</option>
+        <option value="GBP">£ pounds</option>
+        <option value="EUR">€ euros</option>
+        <option value="MXN">$ mx peso</option>
+    </select>
+    <br>
+    <br>
+    <button>exchange</button>
 </body>
+
 </html>

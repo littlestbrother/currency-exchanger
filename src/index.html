@@ -13,19 +13,22 @@
 <body>
     <div class="container">
         <h1 class="display-1">currency exchanger</h1>
-        <input type="number" min="0" id="amount">
-        <label>USD to </label>
-        <select id="currency">
+        <h3>let's convert</h3>
+        <input type="number" min="0" id="amount" class="form-control">
+        <h2>USD to </h2>
+        <!-- <br> -->
+        <select id="currency"class="form-control">
             <option value="JPY">¥ yen</option>
             <option value="ILS">₪ shekel</option>
             <option value="GBP">£ pounds</option>
             <option value="EUR">€ euros</option>
             <option value="MXN">$ mx peso</option>
         </select>
-        <h1>=</h1>
-        <button>exchange</button>
         <br>
-        <p id="result"></p>
+        <button class="btn btn-primary">exchange</button>
+        <br>
+        <br>
+        <h2 id="result">&nbsp;</h2>
     </div>
 </body>
 

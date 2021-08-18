@@ -3,13 +3,12 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Exchange from './exchange'
-// $(console.log(`${process.env.KEY}`));
 
 function addElement(response, amount, currency) {
     if (response.result == "success") {
-        $('p#result').text(`${amount} USD to ${amount} ${currency} is ${doMath(amount, response.conversion_rate)}!`);
+        $('h2#result').text(`${amount} USD is worth ${doMath(amount, Math.round(100 * response.conversion_rate))/100} ${currency}!`);
     } else {
-        $('p#result').text(`Error: ${JSON.stringify(response)}`);
+        $('h2#result').text(`Error: ${JSON.stringify(response)}`);
     }
 }
 
@@ -21,7 +20,6 @@ $(document).ready(function () {
     $("button").click(function () {
         let currency = $("#currency option:selected").val()
         let amount = $('input#amount').val();
-        console.log(currency);
         Exchange.getExchangeRate(currency).then(function (response) {
             addElement(response, amount, currency);
         })
